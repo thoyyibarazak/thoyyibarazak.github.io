@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thoyyiba Jabin - Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(45deg, #00416a, #e4e5e6);
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.3rem;
+            color: #ddd;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            margin: 50px 0 20px;
+            color: #00416a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #00416a;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+         /* Education Section */
+.education-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.education-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #00416a;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.education-header h3 {
+    font-size: 1.5rem;
+    color: #00416a;
+    margin: 0;
+}
+
+.education-date {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.education-body {
+    font-size: 1rem;
+    color: #444;
+}
+
+.education-institute {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #00416a;
+}
+
+.education-grade {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+        /* Projects Section */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .project-title {
+            font-size: 1.5rem;
+            color: #00416a;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .project-details {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .project-tech {
+            font-size: 0.9rem;
+            color: #00416a;
+            font-weight: bold;
+        }
+
+        /* Certifications Section */
+        .certifications-section {
+            margin: 50px 0;
+        }
+        .certification-timeline {
+            position: relative;
+            margin: 20px 0;
+        }
+        .certification-timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #00416a;
+            top: 0;
+            bottom: 0;
+            left: 30px;
+            margin-left: -2px;
+        }
+        .certification-box {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-left: 60px;
+            margin-bottom: 40px;
+        }
+        .certification-box::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #00416a;
+            top: 20px;
+            left: -38px;
+        }
+        .certification-title {
+            font-size: 1.5rem;
+            color: #00416a;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .certification-date {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .certification-details {
+            font-size: 1rem;
+            color: #444;
+        }/* Contact Information Section */
+.info-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #f9f9f9; /* Light background for contact section */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Depth effect */
+    object-fit: cover;
+}
+
+.contact-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+}
+
+.contact-details strong {
+    color: #00416a;
+}
+
+.contact-details a {
+    color: #00416a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+        /* Info section */
+        .info, .skills, .education, .projects, .certifications {
+            margin-bottom: 40px;
+        }
+        .info p, .skills ul, .education ul, .projects ul, .certifications ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.1rem;
+            color: #444;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #00416a;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Skills section */
+        .skills ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skills ul li {
+            background-color: #00416a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        /* Education and Projects */
+        ul li strong {
+            color: #00416a;
+        }
+        /* Contact form */
+        .contact-box {
+            background-color: #e4e5e6;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-box h2 {
+            color: #00416a;
+            margin-bottom: 20px;
+        }
+        .contact-box input, .contact-box textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .contact-box input[type="submit"] {
+            background-color: #00416a;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+        .contact-box input[type="submit"]:hover {
+            background-color: #002a4d;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #00416a;
+            color: white;
+            margin-top: 40px;
+        }
+        footer a {
+            color: white;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>Thoyyiba Jabin PP</h1>
+            <p>MSc Computer Science | Enthusiastic Programmer | Python, C++, Java Developer</p>
+        </header>
+
+        <!-- Contact Information -->
+<section class="info">
+    <h2 class="section-title">Contact Information</h2>
+    <div class="info-content">
+        <img src="Thoyyiba_Pic.jpg" alt="" class="profile-photo">
+        <div class="contact-details">
+            <p><strong>Email:</strong> <a href="mailto:thoyyibarzk@gmail.com">thoyyibarzk@gmail.com</a></p>
+            <p><strong>Phone:</strong> +91 8137086340</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/thoyyiba" target="_blank">linkedin.com/in/thoyyiba</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/thoyyibarazak" target="_blank">github.com/thoyyibarazak</a></p>
+        </div>
+    </div>
+</section>
+
+        <!-- Skills Section -->
+        <section class="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <ul>
+                <li>C</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>SQL</li>
+            </ul>
+        </section>
+
+     <!-- Education Section -->
+<section class="education">
+    <h2 class="section-title">Education</h2>
+    <div class="education-cards">
+        <div class="education-card">
+            <div class="education-header">
+                <h3>MSc Computer Science</h3>
+                <p class="education-date">2022 - 2024</p>
+            </div>
+            <div class="education-body">
+                <p class="education-institute">Mahatma Gandhi University, Kottayam</p>
+                <p class="education-grade"><strong>CGPA: 8.0/10</strong></p>
+            </div>
+        </div>
+
+        <div class="education-card">
+            <div class="education-header">
+                <h3>BSc Computer Science</h3>
+                <p class="education-date">2019 - 2022</p>
+            </div>
+            <div class="education-body">
+                <p class="education-institute">LBS Model Degree College</p>
+                <p class="education-grade"><strong>CGPA: 8.4/10</strong></p>
+            </div>
+        </div>
+
+        <div class="education-card">
+            <div class="education-header">
+                <h3>HSS Computer Science</h3>
+                <p class="education-date">2017 - 2019</p>
+            </div>
+            <div class="education-body">
+                <p class="education-institute">SNM HSS Parappanangadi</p>
+                <p class="education-grade"><strong>Percentage: 83%</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3 class="project-title">Image Generation using GAN</h3>
+                    <p class="project-details">
+                        Developed a Pix2Pix GAN model for translating SAR imagery to optical format using U-Net and Attention U-Net architectures. Compared performance with QXS-SAROPT and SAR2OPT-Heterogeneous datasets.
+                    </p>
+                    <p class="project-tech">Technologies: Python, TensorFlow, Google Colab</p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">MediCare</h3>
+                    <p class="project-details">
+                        A web application where users can order medicines by uploading a prescription and receiving home delivery. The application also enables online consultation through chat.
+                    </p>
+                    <p class="project-tech">Technologies: Python (Flask), SQL, Bootstrap</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Certifications Section -->
+        <section class="certifications-section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certification-timeline">
+
+                <div class="certification-box">
+                    <h3 class="certification-title">Python Internship</h3>
+                    <p class="certification-date">January 2022 - Riss Technologies</p>
+                    <p class="certification-details">
+                        Successfully completed a 14-day internship focused on Python programming, gaining hands-on experience in advanced Python concepts and practical applications.
+                    </p>
+                </div>
+
+                <div class="certification-box">
+                    <h3 class="certification-title">Advanced Deep Learning Workshop</h3>
+                    <p class="certification-date">May 2023 - 7 Days Workshop</p>
+                    <p class="certification-details">
+                        Participated in an intensive workshop that explored cutting-edge deep learning techniques and developed practical experience in GAN models for SAR-to-optical image translation.
+                    </p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Contact Form Section -->
+        <section class="contact">
+            <div class="contact-box">
+                <h2>Contact Me</h2>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <input type="submit" value="Send Message">
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+    <!-- Footer Section -->
+    <footer>
+        <p>Thoyyiba Jabin PP | &copy; 2024</p>
+        <a href="mailto:thoyyibarzk@gmail.com">Email Me</a> |
+        <a href="https://www.linkedin.com/in/thoyyiba" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/thoyyibarazak" target="_blank">GitHub</a>
+    </footer>
+
+</body>
+</html>
